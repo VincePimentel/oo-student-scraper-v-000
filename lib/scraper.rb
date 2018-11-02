@@ -11,7 +11,8 @@ class Scraper
     students = Hash.new
 
     doc.css("div.student-card").each do |student|
-      students << [
+      student_key = student.css("h4.student-name").text.downcase.gsub(" ", "_")
+      students[student_key.to_sym] = [
         name: student.css("h4.student-name").text,
         location: student.css("p.student-location").text,
         profile_url: student.css("a").attribute("href").value
