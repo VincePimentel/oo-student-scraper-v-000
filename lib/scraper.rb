@@ -8,7 +8,7 @@ class Scraper
 
     test = doc.css("div.student-card")
 
-    students = Hash.new
+    students = Array.new
 
     doc.css("div.student-card").each do |student|
       students = {
