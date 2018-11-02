@@ -10,13 +10,13 @@ class Scraper
 
     students = Hash.new
 
-    doc.css("div.student-card").each do |student|
-      students = {
-        name: student.css("div.card-text-container h4").text
-        location:
-      }
-    end
-    #binding.pry
+    # doc.css("div.student-card").each do |student|
+    #   students = {
+    #     name: student.css("div.card-text-container h4").text
+    #     location:
+    #   }
+    # end
+    binding.pry
   end
 
   def self.scrape_profile_page(profile_url)
