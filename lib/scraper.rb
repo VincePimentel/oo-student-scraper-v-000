@@ -17,6 +17,8 @@ class Scraper
         profile_url: student.css("a").attribute("href").value
       }
     end
+
+    students
     binding.pry
   end
 
