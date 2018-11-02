@@ -10,12 +10,13 @@ class Scraper
 
     students = Hash.new
 
-    # doc.css("div.student-card").each do |student|
-    #   students = {
-    #     name: student.css("div.card-text-container h4").text
-    #     location:
-    #   }
-    # end
+    doc.css("div.student-card").each do |student|
+      students = {
+        name: student.css("div.card-text-container h4").text
+        location: student.css("div.card-text.container p").text
+        profile_url: student.css("a").attribute("href").value
+      }
+    end
     binding.pry
   end
 
